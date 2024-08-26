@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ethersproject/bytes": "^5.7.0",
+    "@ethersproject/keccak256": "^5.7.0",
     "@lit-protocol/contracts-sdk": "^6.4.8",
     "@lit-protocol/lit-auth-client": "^6.4.8",
     "@lit-protocol/lit-node-client": "^6.2.2",
@@ -21,7 +23,8 @@
     "node-localstorage": "^3.0.5",
     "react": "^18",
     "react-dom": "^18",
-    "siwe": "^2.3.2"
+    "siwe": "^2.3.2",
+    "util": "^0.12.5"
   },
   "devDependencies": {
     "eslint": "^8",
