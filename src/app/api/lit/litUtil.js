@@ -110,7 +110,7 @@ class LitUtil {
   
     async initLitNodeClient(setLitNodeConnected, setLitNodeClient) {
       this.litNodeClient = new LitJsSdk.LitNodeClient({
-        litNetwork: LitNetwork.DatilTest,
+        litNetwork: LitNetwork.Datil,
         rpc: process.env.NEXT_PUBLIC_LIT_RPC,
         debug: true,
       });
@@ -165,7 +165,7 @@ class LitUtil {
     async initContractClient(setContractClientConnected, setContractClient) {
       this.contractClient = new LitContracts({
         privateKey: "0x7cd048d1ba2b2f2ed4c16eb2194a395b1afa9ef454a0244a0ff928fed757331c",
-        network: LitNetwork.DatilTest,
+        network: LitNetwork.Datil,
         debug: true,
       });
       await this.contractClient.connect();

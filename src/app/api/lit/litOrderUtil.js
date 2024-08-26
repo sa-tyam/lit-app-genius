@@ -108,34 +108,6 @@ class LitOrderUtil {
     console.log("Limit order encrypted and saved to local storage");
   }
 
-  async decryptOrder() {
-    try {
-      // Retrieve the encrypted limit order from local storage
-      const ciphertext = JSON.parse(localStorage.getItem("ciphertext"));
-      console.log("Ciphertext:", ciphertext);
-      const dataToEncryptHash = JSON.parse(
-        localStorage.getItem("dataToEncryptHash")
-      );
-      console.log("Data to Encrypt Hash:", dataToEncryptHash);
-
-      const decryptedOrder = await LitJsSdk.decryptToString(
-        {
-          ciphertext,
-          dataToEncryptHash,
-          chain: "ethereum",
-          sessionSigs: this.pkpSessionSigs,
-          accessControlConditions: this.accessControlConditions,
-        },
-        this.litNodeClient
-      );
-      console.log("Decrypted limit order:", decryptedOrder);
-      return JSON.parse(decryptedOrder);
-    } catch (error) {
-      console.error("Error decrypting limit order:", error);
-      throw error;
-    }
-  }
-
   async executeOrder(currentPrice) {
     // Retrieve the encrypted limit order from local storage
     const ciphertext = JSON.parse(localStorage.getItem("ciphertext"));
